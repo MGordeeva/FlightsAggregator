@@ -2,6 +2,7 @@ namespace FlightsAggregator.Business.ExternalService1.Entities
 {
     public class ExternalService1FlightEntity
     {
+        public required string Id { get; set; }
         public required string DepartureCity { get; set; }
         public required string DestinationCity { get; set; }
         public DateTime DepartureTime { get; set; }

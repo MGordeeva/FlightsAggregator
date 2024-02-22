@@ -56,6 +56,7 @@ namespace FlightsAggregator.Business.ExternalService2
             {
                 new ExternalService2FlightEntity
                 {
+                    Id = "1",
                     ArrivalTime = DateTime.Now.AddDays(1),
                     DepartureTime = DateTime.Now,
                     DepartureCity = "DepartureCity",
@@ -69,6 +70,7 @@ namespace FlightsAggregator.Business.ExternalService2
                 },
                 new ExternalService2FlightEntity
                 {
+                    Id = "2",
                     ArrivalTime = DateTime.Now.AddDays(1),
                     DepartureTime = DateTime.Now,
                     DepartureCity = "DepartureCity2",
@@ -82,6 +84,7 @@ namespace FlightsAggregator.Business.ExternalService2
                 },
                 new ExternalService2FlightEntity
                 {
+                    Id = "3",
                     ArrivalTime = DateTime.Now.AddDays(1),
                     DepartureTime = DateTime.Now,
                     DepartureCity = "DepartureCity3",
