@@ -4,6 +4,11 @@ using FlightsAggregator.Business.ExternalService2;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddOutputCache(options =>
+{
+    options.AddBasePolicy(builder =>
+        builder.Expire(TimeSpan.FromSeconds(10)));
+});
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -14,6 +19,8 @@ builder.Services.AddHttpClient();
 ConfigureServices(builder.Services);
 
 var app = builder.Build();
+
+app.UseOutputCache();
 
 if (app.Environment.IsDevelopment())
 {

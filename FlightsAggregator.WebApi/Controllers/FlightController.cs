@@ -1,6 +1,7 @@
 using FlightsAggregator.Business;
 using FlightsAggregator.Business.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 
 namespace FlightsAggregator.WebApi.Controllers
 {
@@ -16,6 +17,7 @@ namespace FlightsAggregator.WebApi.Controllers
         }
 
         [HttpGet]
+        [OutputCache(PolicyName = "CacheForTenSeconds")]
         public async Task<IEnumerable<Flight>> GetAsync([FromQuery] SearchFlightRequestFilters request, string sortField, bool acsending)
         {
             return await _flightAggregatorService.GetFlightsAsync(request, sortField, acsending);
